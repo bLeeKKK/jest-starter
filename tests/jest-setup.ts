@@ -29,3 +29,20 @@
  * replace
 */
 import "jest-location-mock";
+
+
+/**
+ * 这在调试时可以很方便地看到结果，但是会生成很多干扰项。举个例子，如代码里有
+ * console.error('debug')，那么在跑测试时就会生成很多干扰的报错信息。
+ * 因此，我们在写测试时应该要把 Logger 给 Mock 掉。
+*/
+
+// 方法一
+// jest.spyOn(console, 'log').mockReturnValue();
+// jest.spyOn(console, 'info').mockReturnValue();
+// jest.spyOn(console, 'warn').mockReturnValue();
+// jest.spyOn(console, 'error').mockReturnValue();
+
+// 方法二
+import mockConsole from "jest-mock-console";
+mockConsole()
