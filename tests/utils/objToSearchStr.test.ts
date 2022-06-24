@@ -1,4 +1,4 @@
-import objToSearchStr from "@/utils/objToSearchStr";
+import objToSearchStr from "utils/objToSearchStr";
 
 describe("objToSearchStr", () => {
   it("可以将对象转化成查询参数字符串", () => {

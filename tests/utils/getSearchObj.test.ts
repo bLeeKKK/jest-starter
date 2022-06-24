@@ -1,4 +1,4 @@
-import getSearchObj from "@/utils/getSearchObj";
+import getSearchObj from "utils/getSearchObj";
 
 describe('获取页面地址参数', () => {
   it("可以获取当前网址的查询参数对象", () => {
