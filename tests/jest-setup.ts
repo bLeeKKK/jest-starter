@@ -46,3 +46,23 @@ import "jest-location-mock";
 // 方法二
 import mockConsole from "jest-mock-console";
 mockConsole()
+
+
+/**
+ * 注：这里引用了 antd 的 Col 和 Row 组件，跑测试时会报：[TypeError: window.matchMedia is not a function]。
+ * 这是因为 jsdom (opens new window)没有实现 window.matchMedia，所以你要在 jest-setup.ts 里添加这个 API 的 Mock：
+ * 
+*/
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});

@@ -1,4 +1,5 @@
 import React, { CSSProperties, FC } from "react";
+import { Row, Col } from "antd";
 
 interface Props {
   type: "large" | "small";
@@ -23,11 +24,28 @@ const styleMapper: Record<"small" | "large", CSSProperties> = {
   large: largeStyle,
 };
 
-// 组件
-const Title: FC<Props> = (props) => {
+// // 组件
+// const Title: FC<Props> = (props) => {
+//   const { title, type } = props;
+
+//   return <p style={styleMapper[type]}>{title}</p>;
+// };
+
+// export default Title;
+
+const Title: FC<Props> = (props: Props) => {
   const { title, type } = props;
 
-  return <p style={styleMapper[type]}>{title}</p>;
+  return (
+    <Row style={styleMapper[type]}>
+      <Col>
+        第一个 Col
+      </Col>
+      <Col>
+        <div>{title}</div>
+      </Col>
+    </Row>
+  )
 };
 
 export default Title;
