@@ -66,3 +66,55 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+/**
+ * 用于判断 dom 组件的展示
+ * 
+ * https://www.npmjs.com/package/@testing-library/jest-dom
+ * 
+ * toBeDisabled
+ * toBeEnabled
+ * toBeEmptyDOMElement
+ * toBeInTheDocument
+ * toBeInvalid
+ * toBeRequired
+ * toBeValid
+ * toBeVisible
+ * toContainElement
+ * toContainHTML
+ * toHaveAccessibleDescription
+ * toHaveAccessibleName
+ * toHaveAttribute
+ * toHaveClass
+ * toHaveFocus
+ * toHaveFormValues
+ * toHaveStyle
+ * toHaveTextContent
+ * toHaveValue
+ * toHaveDisplayValue
+ * toBeChecked
+ * toBePartiallyChecked
+ * toHaveErrorMessage
+  * 
+*/
+import '@testing-library/jest-dom'
+
+
+
+/**
+ * msw (opens new window)可以拦截指定的 Http 请求，有点类似 Mock.js (opens new window)，是做测试时一个非常强大好用的 Http Mock 工具。
+ * 
+ * 如果你想在某个测试文件中想单独指定某个接口的 Mock 返回， 可以使用 server.use(mockHandler) 来实现
+ * */ 
+import server from "./mockServer/server";
+beforeAll(() => {
+  server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  server.close();
+});
