@@ -44,8 +44,8 @@ import "jest-location-mock";
 // jest.spyOn(console, 'error').mockReturnValue();
 
 // 方法二
-import mockConsole from "jest-mock-console";
-mockConsole()
+// import mockConsole from "jest-mock-console";
+// mockConsole()
 
 
 /**
