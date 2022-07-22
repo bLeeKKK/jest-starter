@@ -24,7 +24,7 @@ const styleMapper: Record<"small" | "large", CSSProperties> = {
   large: largeStyle,
 };
 
-// // 组件
+// 组件
 // const Title: FC<Props> = (props) => {
 //   const { title, type } = props;
 
