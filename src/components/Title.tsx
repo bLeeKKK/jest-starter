@@ -38,14 +38,12 @@ const Title: FC<Props> = (props: Props) => {
 
   return (
     <Row style={styleMapper[type]}>
-      <Col>
-        第一个 Col
-      </Col>
+      <Col>第一个 Col</Col>
       <Col>
         <div>{title}</div>
       </Col>
     </Row>
-  )
+  );
 };
 
 export default Title;

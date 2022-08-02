@@ -8,4 +8,6 @@ import { Provider } from "react-redux";
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>, document.querySelector("#root"));
+  </Provider>,
+  document.querySelector("#root")
+);
